@@ -1,14 +1,26 @@
 [versions]
-agp = "8.5.0"
-kotlin = "1.9.0"
+agp = "8.5.2"
+kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.4"
 activityCompose = "1.9.1"
-composeBom = "2024.04.01"
-viewModel = "2.6.1"
+composeBom = "2024.08.00"
+viewModel = "2.8.4"
+hilt = "2.51.1"
+hiltNavigation = "1.2.0"
+ksp = "2.0.0-1.0.23"
+retrofit = "2.9.0"
+okhttp = "4.12.0"
+gson = "2.11.0"
+glide = "1.0.0-beta01"
+navigationCompose = "2.7.7"
+iconsExtend = "1.6.8"
+constraintlayout-compose = "1.0.1"
+places = "3.5.0"
+coilCompose = "2.4.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,9 +37,24 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose" }
+androidx-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewModel" }
+hilt = { group = 'com.google.dagger', name = 'hilt-android', version.ref = 'hilt'}
+androidx-hilt = { group = 'androidx.hilt', name = 'hilt-navigation-compose', version.ref = 'hiltNavigation'}
+hilt-android-compiler = { group = 'com.google.dagger', name = 'hilt-compiler', version.ref = 'hilt' }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+glide-compose = { group= "com.github.bumptech.glide", name = "compose", version.ref = "glide" }
+navigation-compose = { group ="androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose"}
+material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "iconsExtend"}
+androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout-compose" }
+places = { group = "com.google.android.libraries.places", name = "places", version.ref = "places" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilCompose"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
