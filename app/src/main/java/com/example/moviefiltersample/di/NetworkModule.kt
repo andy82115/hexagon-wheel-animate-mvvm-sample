@@ -15,7 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NetworkModule {
 
     private const val BASE_URL ="https://api.themoviedb.org/"
-    private const val API_KEY = "b6f1a3bece9e443066e6cc1121da9acf"
+    private const val API_KEY = "YOUR KEY"
+    private const val API_TOKEN = "YOUR TOKEN"
 
     @Provides
     fun provideRetrofit(): Retrofit {
@@ -24,7 +25,7 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .client(
                 OkHttpClient.Builder()
-                    .addInterceptor(ApiKeyInterceptor(API_KEY))
+                    .addInterceptor(ApiKeyInterceptor(API_KEY, API_TOKEN))
                     .build()
             )
             .build()
